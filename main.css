@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #c7fffd;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.particule {
+  position: absolute;
+  max-width: 100%;
+  height: 1vh;
+  left: 50%;
+  z-index: -1;
+}
+header {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .logo {
+  position: relative;
+  max-width: 250px;
+}
+header ul {
+  position: relative;
+  display: flex;
+}
+header ul li {
+  list-style: none;
+}
+header ul li a {
+  display: inline-block;
+  color: #26dff8;
+  font-weight: 500;
+  font-size: 20px;
+  margin-left: 40px;
+  text-decoration: none;
+}
+.content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content .textBox {
+  position: relative;
+  max-width: 600px;
+}
+.content .textBox h2 {
+  color: #26dff8;
+  font-size: 4em;
+  line-height: 1.5em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.content .textBox h2 span {
+  font-size: 2em;
+}
+.content .textBox p {
+  color: #26dff8;
+}
+.content .textBox a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 20px;
+  background: #26dff8;
+  color: #fff;
+  border-radius: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.content .imgBox {
+  width: 600px;
+  display: flex;
+  padding-right: 50px;
+  margin-top: 50px;
+  justify-content: flex-end;
+}
+
+.content .imgBox img {
+  max-width: 500px;
+}
+.thumb {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+}
+.thumb li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  cursor: pointer;
+  transition: 0.05s;
+}
+.thumb li:hover {
+  transform: translateY(-15px);
+}
+
+.thumb li img {
+  max-width: 100px;
+}
+
+.social {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.social li {
+  list-style: none;
+  cursor: pointer;
+}
+.social li:hover {
+  transform: translateX(-15px);
+}
+
+.social li i {
+  font-size: 5em;
+  display: inline-block;
+  color: #26dff8;
+  margin: 5px 0;
+  transform: scale(0.6);
+}
+
+header ul li a:hover {
+  color: #fff;
+}
+.glowing {
+  position: absolute;
+
+  width: 300px;
+  margin: -150px;
+  transform-origin: right;
+  animation: colorChange 60s linear infinite;
+}
+.glowing:nth-child(even) {
+  transform-origin: left;
+}
+
+.glowing span {
+  position: absolute;
+  top: calc(80px * var(--i));
+  left: calc(80px * var(--i));
+  bottom: calc(80px * var(--i));
+  right: calc(80px * var(--i));
+}
+.glowing span::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  width: 15px;
+  height: 15px;
+  background: #f00;
+  border-radius: 50%;
+}
+.glowing span:nth-child(3n + 1):before {
+  background: rgba(4, 210, 247, 1);
+  box-shadow: 0 0 20px rgba(4, 210, 247, 1), 0 0 40px rgba(4, 210, 247, 1),
+    0 0 60px rgba(4, 210, 247, 1), 0 0 80px rgba(4, 210, 247, 1),
+    0 0 0 8px rgba(4, 210, 247, 0.1);
+}
+.glowing span:nth-child(3n + 2):before {
+  background: rgba(81, 215, 36, 1);
+  box-shadow: 0 0 20px rgba(81, 215, 36, 1), 0 0 40px rgba(81, 215, 36, 1),
+    0 0 60px rgba(81, 215, 36, 1), 0 0 80px rgba(81, 215, 36, 1),
+    0 0 0 8px rgba(81, 215, 36, 0.1);
+}
+.glowing span:nth-child(3n + 3):before {
+  background: rgba(244, 97, 249, 1);
+  box-shadow: 0 0 20px rgba(244, 97, 249, 1), 0 0 40px rgba(244, 97, 249, 1),
+    0 0 60px rgba(244, 97, 249, 1), 0 0 80px rgba(244, 97, 249, 1),
+    0 0 0 8px rgba(244, 97, 249, 0.1);
+}
+
+.glowing span:nth-child(3n + 1) {
+  animation: animate 10s alternate infinite;
+}
+.glowing span:nth-child(3n + 2) {
+  animation: animate-reverse 3s alternate infinite;
+}
+.glowing span:nth-child(3n + 3) {
+  animation: animate 8s alternate infinite;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes animate-reverse {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes colorChange {
+  0% {
+    filter: hue-rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+    transform: rotate(3600deg);
+  }
+}
